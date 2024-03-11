@@ -9,7 +9,7 @@ import net.dv8tion.jda.api.requests.GatewayIntent;
 public final class Constructor {
 
     private static JDA jda;
-    private final String token = "";
+    private static final String token = "MTEwNjI0ODgxODc5MTU1NTIwMw.GGnztq.zwfr_OG1gHTxnW9L2fJ8luw9Lmf8THUTQgdtYI";
 
     public static final GatewayIntent[] gatewayIntents = {
         GatewayIntent.GUILD_EMOJIS_AND_STICKERS,
@@ -23,7 +23,7 @@ public final class Constructor {
      };
 
     public static void main(String[] args) {
-        JDABuilder builder = JDABuilder.create("MTEwNjI0ODgxODc5MTU1NTIwMw.GKXJ-W.2OhQsZl0QHCIS6REIvYPmWcP0Oj54sXpqB5lGE", Arrays.asList(gatewayIntents));
+        JDABuilder builder = JDABuilder.create(token, Arrays.asList(gatewayIntents));
         try {
             jda = builder.build().awaitReady();
         } catch (InterruptedException e) {
