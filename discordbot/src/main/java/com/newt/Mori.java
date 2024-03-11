@@ -16,9 +16,8 @@ import net.dv8tion.jda.api.entities.Activity;
 
 public class Mori {
     
-    public static JDA api = Constructor.jda;
+    public static JDA api = Constructor.getJDA();
     
-
 
     public static void main(String args[]) throws InterruptedException, IOException, URISyntaxException {
     
