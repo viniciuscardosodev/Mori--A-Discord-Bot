@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import com.newt.config.Maps;
+
 import ca.tristan.easycommands.commands.CommandExecutor;
 import ca.tristan.easycommands.commands.EasyCommands;
 import ca.tristan.easycommands.commands.EventData;

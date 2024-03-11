@@ -1,4 +1,4 @@
-package com.newt.commands;
+package com.newt.config;
 
 public enum Maps {
     
