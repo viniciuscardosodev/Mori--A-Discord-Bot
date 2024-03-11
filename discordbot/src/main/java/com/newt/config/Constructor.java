@@ -9,7 +9,7 @@ import net.dv8tion.jda.api.requests.GatewayIntent;
 public final class Constructor {
 
     private static JDA jda;
-    private static final String token = "MTEwNjI0ODgxODc5MTU1NTIwMw.GGnztq.zwfr_OG1gHTxnW9L2fJ8luw9Lmf8THUTQgdtYI";
+    private static final String token = "MTEwNjI0ODgxODc5MTU1NTIwMw.GaeMF1.Anl7B-RPaRozF8vxkxx_DGuxdmqENDy_072NHs";
 
     public static final GatewayIntent[] gatewayIntents = {
         GatewayIntent.GUILD_EMOJIS_AND_STICKERS,
