@@ -9,6 +9,7 @@ import net.dv8tion.jda.api.requests.GatewayIntent;
 public final class Constructor {
 
     private static JDA jda;
+    private final String token = "";
 
     public static final GatewayIntent[] gatewayIntents = {
         GatewayIntent.GUILD_EMOJIS_AND_STICKERS,
@@ -34,5 +35,5 @@ public final class Constructor {
         main(null);
         return jda;
     }
-    
+
 }
