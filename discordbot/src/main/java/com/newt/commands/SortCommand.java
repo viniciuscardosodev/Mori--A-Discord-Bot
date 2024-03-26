@@ -6,18 +6,18 @@ import java.util.Random;
 
 import com.newt.config.Maps;
 
-import ca.tristan.easycommands.commands.CommandExecutor;
-import ca.tristan.easycommands.commands.EasyCommands;
+import ca.tristan.easycommands.commands.slash.SlashExecutor;
+import kotlin.collections.builders.ListBuilder;
 import ca.tristan.easycommands.commands.EventData;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Member;
-import net.dv8tion.jda.api.entities.MessageEmbed;
+import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import java.awt.Color;
 
 
 
-public class SortCommand extends CommandExecutor{
+public class SortCommand extends SlashExecutor{
 
     public static ArrayList<String> listaMembros = new ArrayList<String>();
 
@@ -34,15 +34,30 @@ public class SortCommand extends CommandExecutor{
         String defendersDesc = "Esse será o time que começará defendendo. \n";
 
         if (!data.getMemberVoiceState().inAudioChannel()){
-            data.deferReply().queue();
+            data.deferReply();
             data.getHook().sendMessage("Hey, você não está em nenhum voice chat! Entre em um voice chat para usar esse comando.").queue();
             return;
         }
-        data.deferReply().queue();
-        List<Member> l = data.getMemberVoiceState().getChannel().getMembers();
-        System.out.println("Tamanho da lista" + l.size());
-        for (Member m : l) 
-            addIfNotIn(m.getUser().getName());;
+        data.deferReply();
+        List<Member> tempMemberList = data.getMemberVoiceState().getChannel().getMembers();
+        List<User> tempUserList = new ListBuilder<User>();
+
+        for (Member m : tempMemberList)
+            tempUserList.add(m.getUser());
+
+        addIfNotIn("Bagre 1");
+        addIfNotIn("Bagre 2");
+        addIfNotIn("Bagre 3");
+        addIfNotIn("Bagre 4");
+        addIfNotIn("Bagre 5");
+        addIfNotIn("Bagre 6");
+        addIfNotIn("Bagre 7");
+        addIfNotIn("Bagre 8");
+        addIfNotIn("Bagre 9");
+        addIfNotIn("Bagre 10");
+        System.out.println("Tamanho da lista" + tempMemberList.size());
+        for (User user : tempUserList) 
+            addIfNotIn(user.getGlobalName());
 
         if (listaMembros.size() < 10) {   
                 data.getHook().sendMessage("Aí tem menos de 10 jogadores, digite /adicionar para cada membro pendente!").queue();

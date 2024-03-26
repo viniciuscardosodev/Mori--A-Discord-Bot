@@ -1,6 +1,4 @@
 /.vscode
 /Mori.jar
 discordbot/src/main/java/com/newt/config/
-discordbot/target/classes/com/newt/config/
-discordbot/target/classes/com/newt/Mori.class
-discordbot/target/classes/com/newt/commands/SortCommand.class
+discordbot/target/
