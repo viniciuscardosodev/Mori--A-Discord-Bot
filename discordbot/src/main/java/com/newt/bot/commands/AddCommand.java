@@ -1,4 +1,4 @@
-package com.newt.commands;
+package com.newt.bot.commands;
 
 import java.util.List;
 

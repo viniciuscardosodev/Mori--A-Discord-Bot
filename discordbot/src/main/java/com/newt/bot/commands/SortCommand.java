@@ -1,10 +1,11 @@
-package com.newt.commands;
+package com.newt.bot.commands;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import com.newt.config.Maps;
+import com.newt.bot.config.*;
+
 
 import ca.tristan.easycommands.commands.slash.SlashExecutor;
 import kotlin.collections.builders.ListBuilder;
@@ -45,19 +46,20 @@ public class SortCommand extends SlashExecutor{
         for (Member m : tempMemberList)
             tempUserList.add(m.getUser());
 
-        addIfNotIn("Bagre 1");
-        addIfNotIn("Bagre 2");
-        addIfNotIn("Bagre 3");
-        addIfNotIn("Bagre 4");
-        addIfNotIn("Bagre 5");
-        addIfNotIn("Bagre 6");
-        addIfNotIn("Bagre 7");
-        addIfNotIn("Bagre 8");
-        addIfNotIn("Bagre 9");
-        addIfNotIn("Bagre 10");
-        System.out.println("Tamanho da lista" + tempMemberList.size());
-        for (User user : tempUserList) 
-            addIfNotIn(user.getGlobalName());
+        
+        System.out.println("Tamanho da lista" + tempUserList.size());
+
+        for (User user : tempUserList) {
+            String participant = "nullUser";
+            if (user.getGlobalName() != null) {
+                participant = user.getGlobalName();
+            } else {
+                participant = user.getEffectiveName();
+            }
+            addIfNotIn(participant);
+        }
+            
+
 
         if (listaMembros.size() < 10) {   
                 data.getHook().sendMessage("Aí tem menos de 10 jogadores, digite /adicionar para cada membro pendente!").queue();
